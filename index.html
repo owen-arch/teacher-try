@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>بوت + كتب</title>
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #webchat {
+      flex-grow: 1;
+      height: 100%;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f9f9f9;
+      border-left: 1px solid #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .book {
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .book:hover {
+      background-color: #eee;
+    }
+
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+    }
+
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="webchat"></div>
+    <div class="sidebar">
+      <h3>📚 قائمة الكتب</h3>
+      <div class="book" onclick="sendBook('book1')">📘 كتاب 1</div>
+      <div class="book" onclick="sendBook('book2')">📙 كتاب 2</div>
+      <div class="book" onclick="sendBook('book3')">📕 كتاب 3</div>
+    </div>
+  </div>
+
+  <script>
+    const books = {
+      book1: `📘 هذا هو محتوى كتاب 1.\nمقدمة...\nفصل أول...\nخاتمة.`,
+      book2: `📙 هذا هو محتوى كتاب 2.\nيتحدث عن موضوع مهم جدًا...`,
+      book3: `📕 كتاب 3 يتناول فكرة مختلفة ويحتوي على عدة فصول مثيرة.`
+    };
+
+    let botIsReady = false;
+
+    function sendBook(bookKey) {
+      if (!botIsReady) {
+        alert("⏳ يرجى الانتظار حتى يتم تحميل البوت...");
+        return;
+      }
+
+      const content = books[bookKey];
+      if (!content) return;
+
+      window.botpress.sendEvent({
+        type: 'text',
+        channel: 'web',
+        payload: {
+          text: content
+        }
+      });
+    }
+
+    window.botpress.on("webchat:ready", () => {
+      botIsReady = true;
+      window.botpress.open();
+    });
+
+    window.botpress.init({
+      botId: "ac8fba90-d124-49a7-9d5a-914f748f821a",
+      clientId: "21030871-db4b-4c12-ac34-330dff280174",
+      selector: "#webchat",
+      configuration: {
+        version: "v1",
+        botName: "Owen",
+        botAvatar: "https://files.bpcontent.cloud/2025/06/26/11/20250626113857-WISG4IMM.png",
+        color: "#DC143C",
+        variant: "solid",
+        headerVariant: "glass",
+        themeMode: "light",
+        fontFamily: "fira",
+        radius: 2,
+        feedbackEnabled: false,
+        allowFileUpload: true,
+        footer: "[by Owen](https://owen-arch.github.io/O/)",
+      }
+    });
+  </script>
+</body>
+</html>
