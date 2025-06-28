@@ -1,56 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>بوت التعليم - Owen</title>
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <style>
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
 
-<!-- In your <head> tag -->
-<script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
-<style>
-  #webchat .bpWebchat {
-    position: unset;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-  }
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>مرحبًا بك في بوت Owen التعليمي</h1>
+  <p>البوت سيظهر أدناه 👇</p>
 
-  #webchat .bpFab {
-    display: none;
-  }
-</style>
+  <!-- حاوية البوت -->
+  <div id="webchat" style="width: 500px; height: 500px;"></div>
 
-<!-- Put this on your page BEFORE the script below -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>
+  <script>
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
 
-<!-- In your <body> tag -->
-<script>
-  window.botpress.on("webchat:ready", () => {
-    window.botpress.open();
-  });
-  window.botpress.init({
-  "botId": "ac8fba90-d124-49a7-9d5a-914f748f821a",
-  "configuration": {
-    "version": "v1",
-    "botName": "Owen",
-    "botAvatar": "https://files.bpcontent.cloud/2025/06/26/11/20250626113857-WISG4IMM.png",
-    "website": {
-      "title": "https://owen-arch.github.io/O/",
-      "link": "https://owen-arch.github.io/O/"
-    },
-    "email": {
-      "title": "00owen.po@gmail.com",
-      "link": "00owen.po@gmail.com"
-    },
-    "phone": {},
-    "termsOfService": {},
-    "privacyPolicy": {},
-    "color": "#DC143C",
-    "variant": "solid",
-    "headerVariant": "glass",
-    "themeMode": "light",
-    "fontFamily": "fira",
-    "radius": 2,
-    "feedbackEnabled": false,
-    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
-    "allowFileUpload": true
-  },
-  "clientId": "21030871-db4b-4c12-ac34-330dff280174",
-  "selector": "#webchat"
-});
-</script>
+    window.botpress.init({
+      "botId": "ac8fba90-d124-49a7-9d5a-914f748f821a",
+      "configuration": {
+        "version": "v1",
+        "botName": "Owen",
+        "botAvatar": "https://files.bpcontent.cloud/2025/06/26/11/20250626113857-WISG4IMM.png",
+        "website": {
+          "title": "https://owen-arch.github.io/O/",
+          "link": "https://owen-arch.github.io/O/"
+        },
+        "email": {
+          "title": "00owen.po@gmail.com",
+          "link": "mailto:00owen.po@gmail.com"
+        },
+        "color": "#DC143C",
+        "variant": "solid",
+        "headerVariant": "glass",
+        "themeMode": "light",
+        "fontFamily": "fira",
+        "radius": 2,
+        "feedbackEnabled": false,
+        "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+        "allowFileUpload": true
+      },
+      "clientId": "21030871-db4b-4c12-ac34-330dff280174",
+      "selector": "#webchat"
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>بوت التعليم - Owen</title>
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <style>
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    #webchat .bpFab {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>مرحبًا بك في بوت Owen التعليمي</h1>
+  <p>البوت سيظهر أدناه 👇</p>
+
+  <!-- حاوية البوت -->
+  <div id="webchat" style="width: 500px; height: 500px;"></div>
+
+  <script>
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+
+    window.botpress.init({
+      "botId": "ac8fba90-d124-49a7-9d5a-914f748f821a",
+      "configuration": {
+        "version": "v1",
+        "botName": "Owen",
+        "botAvatar": "https://files.bpcontent.cloud/2025/06/26/11/20250626113857-WISG4IMM.png",
+        "website": {
+          "title": "https://owen-arch.github.io/O/",
+          "link": "https://owen-arch.github.io/O/"
+        },
+        "email": {
+          "title": "00owen.po@gmail.com",
+          "link": "mailto:00owen.po@gmail.com"
+        },
+        "color": "#DC143C",
+        "variant": "solid",
+        "headerVariant": "glass",
+        "themeMode": "light",
+        "fontFamily": "fira",
+        "radius": 2,
+        "feedbackEnabled": false,
+        "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+        "allowFileUpload": true
+      },
+      "clientId": "21030871-db4b-4c12-ac34-330dff280174",
+      "selector": "#webchat"
+    });
+  </script>
+</body>
+</html>
